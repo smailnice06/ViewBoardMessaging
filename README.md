@@ -8,6 +8,28 @@ Ce projet propose une application de **communication sécurisée pair-à-pair (P
 Comment créer un cycle de communication sécurisé, décentralisé et autonome entre plusieurs dispositifs connectés (ViewBoard), sans serveur central de stockage, en assurant une boucle de confiance entre les utilisateurs via des échanges P2P chiffrés ?
 
 ---
+graph TD
+    A[🎯 Objectif principal<br/>Communication P2P sécurisée entre ViewBoard] --> B1[🔐 Sécurité]
+    A --> B2[📡 Communication réseau sans fil]
+    A --> B3[💬 Interface utilisateur simple]
+
+    B1 --> C1[Chiffrement RSA 2048 bits]
+    B1 --> C2[Signature des messages]
+    B1 --> C3[Pas de stockage des messages sur le serveur]
+
+    B2 --> D1[Serveur Flask pour IP uniquement]
+    B2 --> D2[Sockets TCP en Wi-Fi local]
+    B2 --> D3[Mise à jour IP automatique à chaque connexion]
+
+    B3 --> E1[Interface Web sur Flask]
+    B3 --> E2[Sélection d’un contact pour discuter]
+    B3 --> E3[Affichage des messages reçus en temps réel]
+
+    B3 --> E4[Transfert de fichiers prévu (extension future)]
+
+    click A "https://github.com/smailnice06/Secure-P2P-Messaging-" "Voir le projet"
+
+---
 
 ## 🚀 Objectifs du projet
 
