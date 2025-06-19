@@ -202,10 +202,13 @@ Secure-P2P-Messaging/
 
 ## 👥 Répartition des tâches
 
-### Smaïl — Chef de projet & développeur back-end
-- Architecture sécurisée RSA + sockets TCP
+### Smaïl — Chef de projet & concepteur technique pour Raspberry 🍓
+
+- Configuration des Raspberry Pi
 - Développement du serveur Flask
-- Intégration complète du protocole sécurisé
+- Déploiement du client P2P
+- Tests réseau sans fil ViewBoard <-> Pi
+- Utilisation possible de Samba pour transfert fichiers
 - Rédaction de la documentation technique
 
 ### Othmane — Développeur front-end web
@@ -213,11 +216,9 @@ Secure-P2P-Messaging/
 - Intégration du menu, formulaire et messagerie web
 - Tests de compatibilité sur ViewBoard
 
-### Oussama — Responsable Raspberry Pi & réseau
-- Configuration des Raspberry Pi
-- Déploiement du client P2P
-- Tests réseau sans fil ViewBoard <-> Pi
-- Utilisation possible de Samba pour transfert fichiers
+### Oussama — Responsable Sécurité
+- Architecture sécurisée RSA + sockets TCP
+- Intégration complète du protocole sécurisé
 
 ---
 
