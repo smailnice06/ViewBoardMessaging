@@ -4,11 +4,11 @@ Ce projet propose une application de **communication sécurisée pair-à-pair (P
 
 ---
 
-#🎯 Problématique :
+🎯 Problématique :
 Comment créer un cycle de communication sécurisé, décentralisé et autonome entre plusieurs dispositifs connectés (ViewBoard), sans serveur central de stockage, en assurant une boucle de confiance entre les utilisateurs via des échanges P2P chiffrés ?
 
 ---
-#🧯 Exigences:
+🧯 Exigences:
 
 <img width="1422" alt="Capture d’écran 2025-06-19 à 12 26 36" src="https://github.com/user-attachments/assets/a271015b-d6e4-4aa5-9759-89fcd9049a95" />
 
