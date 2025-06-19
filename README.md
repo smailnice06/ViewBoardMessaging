@@ -4,6 +4,11 @@ Ce projet propose une application de **communication sécurisée pair-à-pair (P
 
 ---
 
+🎯 Problématique :
+Comment créer un cycle de communication sécurisé, décentralisé et autonome entre plusieurs dispositifs connectés (ViewBoard), sans serveur central de stockage, en assurant une boucle de confiance entre les utilisateurs via des échanges P2P chiffrés ?
+
+---
+
 ## 🚀 Objectifs du projet
 
 - Mettre en place un **système de messagerie et de transfert de fichiers** entre des écrans ViewBoard et Raspberry Pi.
