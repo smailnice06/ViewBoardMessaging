@@ -9,25 +9,30 @@ Comment créer un cycle de communication sécurisé, décentralisé et autonome 
 
 ---
 graph TD
-    A[🎯 Objectif principal<br/>Communication P2P sécurisée entre ViewBoard] --> B1[🔐 Sécurité]
-    A --> B2[📡 Communication réseau sans fil]
-    A --> B3[💬 Interface utilisateur simple]
 
-    B1 --> C1[Chiffrement RSA 2048 bits]
-    B1 --> C2[Signature des messages]
-    B1 --> C3[Pas de stockage des messages sur le serveur]
+A[🟦 Exigence principale<br/>Assurer une communication P2P sécurisée<br/>entre dispositifs ViewBoard & Raspberry Pi]
 
-    B2 --> D1[Serveur Flask pour IP uniquement]
-    B2 --> D2[Sockets TCP en Wi-Fi local]
-    B2 --> D3[Mise à jour IP automatique à chaque connexion]
+A --> B1[🟥 Exigence fonctionnelle<br/>Permettre l’échange de messages et fichiers]
+A --> B2[🟥 Exigence technique<br/>Utiliser un réseau sans fil TCP sans cloud]
+A --> B3[🟥 Exigence de sécurité<br/>Assurer la confidentialité et l’intégrité]
+A --> B4[🟥 Exigence d’interface<br/>Fournir une interface simple et accessible]
 
-    B3 --> E1[Interface Web sur Flask]
-    B3 --> E2[Sélection d’un contact pour discuter]
-    B3 --> E3[Affichage des messages reçus en temps réel]
+B1 --> C1[🟩 Fonction<br/>Envoi et réception de fichiers via sockets]
+B1 --> C2[🟩 Fonction<br/>Support des messages texte]
 
-    B3 --> E4[Transfert de fichiers prévu (extension future)]
+B2 --> D1[🟧 Composant<br/>Utilisation d’un serveur Flask pour les IP]
+B2 --> D2[🟧 Composant<br/>Connexion directe entre pairs via TCP sur réseau local]
 
-    click A "https://github.com/smailnice06/Secure-P2P-Messaging-" "Voir le projet"
+B3 --> E1[🟨 Sécurité<br/>Chiffrement RSA 2048 bits]
+B3 --> E2[🟨 Sécurité<br/>Signature et vérification des messages]
+B3 --> E3[🟨 Sécurité<br/>Pas de stockage de messages sur le serveur]
+
+B4 --> F1[🟪 Interface<br/>Application Web Flask sur ViewBoard]
+B4 --> F2[🟪 Interface<br/>Choix de l’utilisateur pour la communication]
+B4 --> F3[🟪 Interface<br/>Affichage temps réel des messages reçus]
+
+
+
 
 ---
 
