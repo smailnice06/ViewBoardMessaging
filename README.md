@@ -9,7 +9,7 @@ Comment créer un cycle de communication sécurisé, décentralisé et autonome 
 
 ---
 graph TD
-
+```
 A[🟦 Exigence principale<br/>Assurer une communication P2P sécurisée<br/>entre dispositifs ViewBoard & Raspberry Pi]
 
 A --> B1[🟥 Exigence fonctionnelle<br/>Permettre l’échange de messages et fichiers]
@@ -30,7 +30,7 @@ B3 --> E3[🟨 Sécurité<br/>Pas de stockage de messages sur le serveur]
 B4 --> F1[🟪 Interface<br/>Application Web Flask sur ViewBoard]
 B4 --> F2[🟪 Interface<br/>Choix de l’utilisateur pour la communication]
 B4 --> F3[🟪 Interface<br/>Affichage temps réel des messages reçus]
-
+```
 
 
 
