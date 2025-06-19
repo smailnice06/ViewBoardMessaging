@@ -32,9 +32,130 @@ Ce projet propose une application de **communication sécurisée pair-à-pair (P
        |                               |                               |
        |<-- Interface Web (Flask) ---->|                               |
 ```
+---
+
+## 🧩 Diagramme de Blocs SYSML (Structure)
+
+```
++-----------------------------------------------------+
+|                 [Application Web Flask]             |
+|-----------------------------------------------------|
+| - Interface utilisateur (HTML/CSS/JS)               |
+| - Communication avec Flask backend                  |
+| - Choix de l’ami, envoi et réception de messages    |
+| - Communication avec Raspberry Pi local             |
++-----------------------------------------------------+
+               |             ^
+               | REST API    | Socket TCP
+               v             |
++-----------------------------------------------------+
+|                  [Serveur Central Flask]            |
+|-----------------------------------------------------|
+| - Authentification (/register, /login)              |
+| - Gestion des amis (/friend-request, /friends)      |
+| - Stockage IP publique et présence                  |
+| - Base de données SQLite                           |
++-----------------------------------------------------+
+               ^             |
+               | HTTP        | JSON
+               v             |
++-----------------------------------------------------+
+|          [Client P2P sur Raspberry Pi]              |
+|-----------------------------------------------------|
+| - Récupération IP publique                          |
+| - Enregistrement / Connexion à Flask                |
+| - Communication directe P2P via sockets TCP         |
+| - Chiffrement RSA (clé publique/privée)             |
+| - Réception/Envoi de fichiers et messages           |
++-----------------------------------------------------+
+               |             ^
+               | Socket TCP  | Clés RSA + Fichiers
+               v             |
++-----------------------------------------------------+
+|              [Client P2P distant (ViewBoard)]       |
+|-----------------------------------------------------|
+| - Même code Python tournant sur ViewBoard           |
+| - Interface web via navigateur ViewBoard            |
+| - Dialogue direct avec Raspberry Pi                 |
++-----------------------------------------------------+
+
+
+
+```
 
 ---
 
+## 🎯 Diagramme de cas d’utilisation SYSML (Use Case Diagram)
+
+```
+                           [Utilisateur]
+                                |
+               +----------------+----------------+
+               |                                 |
+     (1) S'enregistrer                     (2) Se connecter
+               |                                 |
+               +---------------+-----------------+
+                               |
+                       [Serveur Flask]
+                               |
+           +------------------+-------------------+
+           |                                      |
+ (3) Ajouter un ami                     (4) Lister mes amis
+           |                                      |
+           +------------------+-------------------+
+                               |
+                        (5) Obtenir l'IP d'un ami
+                               |
+                            [P2P System]
+           +------------------+-------------------+
+           |                                      |
+(6) Échanger des messages            (7) Échanger des fichiers
+       chiffrés (RSA)                     (vidéos/docs)
+           |                                      |
+       [Raspberry Pi]                    [ViewBoard distant]
+
+
+
+```
+
+---
+
+##🧭 Diagramme de Séquence SYSML – Scénario d’un échange P2P
+
+```
+User A         Serveur Flask             User B
+  |                  |                      |
+  |---- /register -->|                      |
+  |<---   OK      ----                      |
+  |---- /login ------>                      |
+  |<---  OK/IP saved--                      |
+  |                                         |
+  |---- /friend-request ->                  |
+  |<--   "Demande envoyée"                  |
+  |                                         |
+  |                  <--- /register ------- |
+  |                  ----->  OK             |
+  |                  <--- /login ---------- |
+  |                  ----->  OK             |
+  |<-- /friend-request (croisée auto acceptée)
+  |                                         |
+  |---- /get-friend-ip(B) -->               |
+  |<---  IP: 192.168.1.47                    |
+  |                                         |
+  |============= Socket TCP ===============>|
+  |          Connexion directe P2P          |
+  |          Échange de clés RSA            |
+  |<============= Socket TCP ==============|
+  |                                         |
+  |==== Message chiffré (RSA + signature) ==>|
+  |<=== Réponse chiffrée ===================|
+  |                                         |
+
+
+```
+
+
+---
 ## 🧩 Fonctionnalités
 
 - 🔐 **Chiffrement RSA** (2048 bits) des messages
