@@ -4,33 +4,13 @@ Ce projet propose une application de **communication sécurisée pair-à-pair (P
 
 ---
 
-🎯 Problématique :
+#🎯 Problématique :
 Comment créer un cycle de communication sécurisé, décentralisé et autonome entre plusieurs dispositifs connectés (ViewBoard), sans serveur central de stockage, en assurant une boucle de confiance entre les utilisateurs via des échanges P2P chiffrés ?
 
 ---
-graph TD
-```
-A[🟦 Exigence principale<br/>Assurer une communication P2P sécurisée<br/>entre dispositifs ViewBoard & Raspberry Pi]
+#🧯 Exigences:
 
-A --> B1[🟥 Exigence fonctionnelle<br/>Permettre l’échange de messages et fichiers]
-A --> B2[🟥 Exigence technique<br/>Utiliser un réseau sans fil TCP sans cloud]
-A --> B3[🟥 Exigence de sécurité<br/>Assurer la confidentialité et l’intégrité]
-A --> B4[🟥 Exigence d’interface<br/>Fournir une interface simple et accessible]
-
-B1 --> C1[🟩 Fonction<br/>Envoi et réception de fichiers via sockets]
-B1 --> C2[🟩 Fonction<br/>Support des messages texte]
-
-B2 --> D1[🟧 Composant<br/>Utilisation d’un serveur Flask pour les IP]
-B2 --> D2[🟧 Composant<br/>Connexion directe entre pairs via TCP sur réseau local]
-
-B3 --> E1[🟨 Sécurité<br/>Chiffrement RSA 2048 bits]
-B3 --> E2[🟨 Sécurité<br/>Signature et vérification des messages]
-B3 --> E3[🟨 Sécurité<br/>Pas de stockage de messages sur le serveur]
-
-B4 --> F1[🟪 Interface<br/>Application Web Flask sur ViewBoard]
-B4 --> F2[🟪 Interface<br/>Choix de l’utilisateur pour la communication]
-B4 --> F3[🟪 Interface<br/>Affichage temps réel des messages reçus]
-```
+<img width="1422" alt="Capture d’écran 2025-06-19 à 12 26 36" src="https://github.com/user-attachments/assets/a271015b-d6e4-4aa5-9759-89fcd9049a95" />
 
 
 
