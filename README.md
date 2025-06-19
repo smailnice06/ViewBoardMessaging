@@ -260,5 +260,5 @@ Ce projet est librement utilisable à des fins éducatives et personnelles.
 
 Pour toute question ou suggestion, contactez l’équipe :  
 - Smaïl Mehbali  
-- Othmane A.  
-- Oussama M.
+- Othmane  
+- Oussama
